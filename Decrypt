@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    FILE *input, *output;
+    char ascii_val;
+    
+    input = fopen("sample.txt", "r"); //opens file in read mode
+    if (input == NULL) {
+        puts("FILE read error");
+        exit(1);
+    }
+
+    output = fopen("Login.txt", "w"); //open file in write mode
+    if (output == NULL) {
+        puts("File write error");
+        exit(1);
+    }
+
+    ch= fgetc(input);
+    while(ch != EOF){
+        fputc(ascii_val, output);
+        ch = fgetc(input);
+    }
+    printf("Decryption succes\n");
+    printf("Login.txt file is generated");
+
+    fclose(input);
+    fclose(output);
+return 0;
+
+    }
